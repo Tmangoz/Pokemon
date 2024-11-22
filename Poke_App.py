@@ -13,4 +13,4 @@ xlsx = pd.read_excel(myfile.content)
 poke_data = pd.DataFrame(xlsx) 
 
 #Show the dataframe(Delete Later)
-st.write(poke_data)    
+print(poke_data)   
