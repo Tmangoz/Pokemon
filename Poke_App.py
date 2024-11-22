@@ -12,7 +12,7 @@ st.title("Pokemon Stat Sheet")
 url= 'https://github.com/Tmangoz/Pokemon/blob/main/pokemon_data.xlsx'
 response = requests.get(url)
 
-if response.status_code = 200: #check if the request was successful
+if response.status_code == 200: #check if the request was successful
   data = BytesIO(response.content)
   poke_data = pd.read_excel(data)
   st.dataframe(poke_data) #Display Dataframe in the Streamlit app
