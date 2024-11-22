@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import requests
-from io import Bytes IO #Import Bytes IO to handle binary file content
+from io import BytesIO #Import Bytes IO to handle binary file content
 
 #Page Setup
 st.set_page_config(page_title = "Pokedex",layout="wide")
