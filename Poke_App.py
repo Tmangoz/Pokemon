@@ -1,22 +1,25 @@
-#library Import
+#IMport Libraries
 import streamlit as st
 import pandas as pd
-import requests
-from io import BytesIO #Import Bytes IO to handle binary file content
-
+import openpyxl
 #Page Setup
 st.set_page_config(page_title = "Pokedex",layout="wide")
 st.title("Pokemon Stat Sheet")
-
 #read excel file and create dataframe
-url= 'https://github.com/Tmangoz/Pokemon/blob/main/pokemon_data.xlsx'
-response = requests.get(url)
-
-if response.status_code == 200: #check if the request was successful
-  data = BytesIO(response.content)
-  poke_data = pd.read_excel(data)
-  st.dataframe(poke_data) #Display Dataframe in the Streamlit app
+csv = pd.read_csv("pokemon_data.csv")
+poke_data = pd.DataFrame(csv) 
+poke_data.head()
+#Get User input for Pokemon they want
+Answer = str(st.text_input("Please enter the Pokemon you'd like to view"))
+#Capitalize the first letter of input as all names in CSV start with uppercase letter
+capitalized_Answer = Answer.capitalize()
+#set Index column blank so it doesnt print the index everytime a pokemon is printed
+blankIndex=[''] * len(poke_data)
+poke_data.index=blankIndex
+#User clicks search button to search the pokemon they are trying to look up
+if st.button("Search"):
+    st.write(poke_data.loc[poke_data.Name==capitalized_Answer])
 else:
-  st.error("Failed to retrieve data from the provided URL.")
+    print("Please check your spelling or enter a valid name of a pokemon")
 
  
