@@ -1,4 +1,4 @@
-#IMport Libraries
+#library Import
 import streamlit as st
 import pandas as pd
 import openpyxl
@@ -13,7 +13,7 @@ poke_data.head()
 Answer = str(st.text_input("Please enter the Pokemon you'd like to view"))
 #Capitalize the first letter of input as all names in CSV start with uppercase letter
 capitalized_Answer = Answer.capitalize()
-#set Index column blank so it doesnt print the index everytime a pokemon is printed
+#Remove Index Value so not displayed on print
 blankIndex=[''] * len(poke_data)
 poke_data.index=blankIndex
 #User clicks search button to search the pokemon they are trying to look up
