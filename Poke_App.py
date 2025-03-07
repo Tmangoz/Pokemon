@@ -17,7 +17,7 @@ capitalized_Answer = Answer.capitalize()
 #Remove Index Value so not displayed on print
 #User clicks search button to search the pokemon they are trying to look up
 if st.button("Search"):
-     result = poke_data.loc[poke_data.Name==capitalized_Answer])
+     result = poke_data.loc[poke_data.Name==capitalized_Answer]
      st.dataframe(result, hide_index=True)
 else:
     print("Please check your spelling or enter a valid name of a pokemon")
