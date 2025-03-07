@@ -18,7 +18,7 @@ capitalized_Answer = Answer.capitalize()
 #User clicks search button to search the pokemon they are trying to look up
 if st.button("Search"):
      poke_data.to_string(index=False)
-    st.write(poke_data.loc[poke_data.Name==capitalized_Answer])
+     st.write(poke_data.loc[poke_data.Name==capitalized_Answer])
 else:
     print("Please check your spelling or enter a valid name of a pokemon")
 
