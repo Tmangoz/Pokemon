@@ -9,6 +9,8 @@ st.title("Pokemon Stat Sheet")
 csv = pd.read_csv("pokemon_data.csv")
 poke_data = pd.DataFrame(csv) 
 poke_data.head()
+#Drop index value column
+poke_data = poke_data.reset_index(drop=True)
 #Get User input for Pokemon they want
 Answer = str(st.text_input("Please enter the Pokemon you'd like to view"))
 #Capitalize the first letter of input as all names in CSV start with uppercase letter
