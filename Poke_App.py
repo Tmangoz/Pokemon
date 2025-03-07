@@ -6,7 +6,7 @@ import openpyxl
 st.set_page_config(page_title = "Pokedex",layout="wide")
 st.title("Pokemon Stat Sheet")
 #read excel file and create dataframe
-csv = pd.read_csv("pokemon_data.csv")
+csv = pd.read_csv("pokemon_data.csv", index_col=False)
 poke_data = pd.DataFrame(csv) 
 poke_data.head()
 #Drop index value column
