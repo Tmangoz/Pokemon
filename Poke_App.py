@@ -8,7 +8,7 @@ st.title("Pokemon Stat Sheet")
 #read excel file and create dataframe
 csv = pd.read_csv("pokemon_data.csv")
 poke_data = pd.DataFrame(csv) 
-poke_data = poke_data.set_index('Name')
+
 #Drop index value column
 #Get User input for Pokemon they want
 Answer = str(st.text_input("Please enter the Pokemon you'd like to view"))
